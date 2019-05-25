@@ -50,6 +50,13 @@ mkdir /mnt/face-images
 s3fs face-images /mnt/face-images -o passwd_file=$HOME/.cos_creds -o sigv2 -o use_path_request_style -o url=https://s3.us.cloud-object-storage.appdomain.cloud
 ```
 
+## 6.- Create the docker image
+We are using **Dockerfile.cloud_IVS** as the image builder. We set an ENV variable as `non-interactive` to avoid some Geographic questions during the image building 
+```
+docker build -t cloud_ivs -f Dockerfile.cloud_IVS .
+```
+
+
 
 
 
