@@ -7,8 +7,7 @@ ibmcloud sl vs create --hostname=face-server --domain=server.cloud --cpu=2 --mem
 ```
 To get the the list of keys we can use `ibmcloud sl security sshkey-list` as we did in Homework 02. If no key is created, we can create a new key list using `ibmcloud sl security sshkey-add serverKey --in-file ~/.ssh/id_rsa.pub`, after generating the new key with `ssh-keygen`
 
-We make sure that this new server is protected against brute-force password breaking: 
-* Edit /etc/ssh/sshd_config
+We make sure that this new server is protected against brute-force password breaking by editing **/etc/ssh/sshd_config**
 ```
 PermitRootLogin prohibit-password
 PasswordAuthentication no
