@@ -1,7 +1,7 @@
 # Set up Virtual Server on the IBM Cloud - Softlayer Configuration
 For reference, we are doing all the command line operations on local host using ssh tunnel.
 
-## 1.- Create a new virtual server in the IBM Virtual Instance ($root$ = vinicloud)
+## 1.- Create a new virtual server in the IBM Virtual Instance (**root** = vinicloud)
 ```
 ibmcloud sl vs create --hostname=face-server --domain=server.cloud --cpu=2 --memory=4096 --datacenter=wdc04 --san --os=UBUNTU_16_64 --disk=100 --key=serverKey_ID
 ```
