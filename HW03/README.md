@@ -6,7 +6,7 @@ We are using a ssh tunnel for running everything from local host. The GPU is alr
 docker build -t mosquitto_jtx2 -f Dockerfile.mosquitto_jtx2
 docker build -t ubuntu_jtx2 -f Dockerfile.ubuntu_jtx2
 ```
-======
+___
 
 # Set up Virtual Server on the IBM Cloud - Softlayer Configuration
 For reference, we are doing all the command line operations on local host using ssh tunnel.
