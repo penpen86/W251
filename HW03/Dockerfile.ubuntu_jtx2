@@ -1,0 +1,44 @@
+# We run an ubuntu arm64v8-based
+FROM arm64v8/ubuntu:bionic
+
+# AUTHOR bmwshop@gmail.com
+# This is the base container for the Jetson TX2 board with drivers (with cuda)
+
+# base URL for NVIDIA libs
+ARG URL=http://169.44.201.108:7002/jetpacks/4.2
+
+# Update packages, install some useful packages
+RUN apt-get update && apt-get install -y apt-utils lbzip2 curl sudo unp && apt-get clean && rm -rf /var/cache/apt
+
+# Install drivers first
+RUN curl -sL $URL/Jetson_Linux_R32.1.0_aarch64.tbz2 | tar xvfj -
+RUN chown root /etc/passwd /etc/sudoers /usr/lib/sudo/sudoers.so /etc/sudoers.d/README
+RUN sed -i "s/LDK_NV_TEGRA_DIR}\/config.tbz2/LDK_NV_TEGRA_DIR}\/config.tbz2 --exclude=etc\/hosts --exclude=etc\/hostname/g"  /tmp/Linux_for_Tegra/apply_binaries.sh
+
+RUN apt-get update
+RUN apt-get install -y software-properties-common
+RUN apt-get update && apt-get install -y \
+    curl \
+    git \
+    python3.6 \
+    python3-pip \
+    python-opencv \
+    python3-opencv \
+    mosquitto \
+    mosquitto-clients \
+    vim \
+    iputils-ping \
+    libhdf5-dev \
+    python3-numpy \
+    python3-setuptools \
+    python3-h5py \
+    python3-wheel
+RUN apt-get clean
+
+RUN pip3 install paho-mqtt
+
+# Clean-up all files
+RUN apt-get -y autoremove
+RUN apt-get -y autoclean
+RUN rm -rf /var/cache/apt
+RUN rm -rf /tmp/*.deb
