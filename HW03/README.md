@@ -1,3 +1,13 @@
+# Jetson TX2 Configuration and webcamera
+## 1.- Create docker images for MQTT clients
+We are using a ssh tunnel for running everything from local host. The GPU is already set up from previous homeworks. The way to connect all files and systems is via **GitHub** and ssh tunneling. We will build two docker images: The OS (_ubuntu_) and the MQTT client (_Mosquitto_)
+
+```
+docker build -t mosquitto_jtx2 -f Dockerfile.mosquitto_jtx2
+docker build -t ubuntu_jtx2 -f Dockerfile.ubuntu_jtx2
+```
+
+
 # Set up Virtual Server on the IBM Cloud - Softlayer Configuration
 For reference, we are doing all the command line operations on local host using ssh tunnel.
 
