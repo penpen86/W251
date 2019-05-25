@@ -18,7 +18,7 @@ Via IBM cloud's webpage we can create a Cloud Storage Object. First we will have
 * Bucket name: face-images. This bucket is set to public, so we can access it.
 
 ## 3.- Install Docker CE using the instructions on Lab2
-I've created a .sh script to do all the updating and installing (check $DockerCE.sh$ as the files attached to the repo)
+I've created a .sh script to do all the updating and installing (check **DockerCE.sh** as the files attached to the repo)
 _(PS: I had to run `sed -i -e 's/\r$//' DockerCE.sh` and `chmod +x DockerCE.sh` to change the End Of Line of the file and make the file executable)_ 
 
 We ran a `docker run hello-world` just to make sure all the installation was a success.
