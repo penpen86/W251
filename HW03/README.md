@@ -2,7 +2,7 @@
 
 From the Homework statement, we can steal the image that explains better our main goal in this project
 
-![alt text](https://raw.githubusercontent.com/penpen86/W251/HW03/StructureHW03.png)
+![alt text](https://raw.githubusercontent.com/penpen86/W251/master/HW03/StructureHW03.png)
 
 We will explain the steps on the Jetson's end and the steps on the cloud VM.
 
