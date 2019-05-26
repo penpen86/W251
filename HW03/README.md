@@ -10,7 +10,7 @@ ___
 
 # Jetson TX2 Configuration and webcamera
 ## 1.- Create docker images for MQTT clients
-We are using a ssh tunnel for running everything from local host. The GPU is already set up from previous homeworks. The way to connect all files and systems is via **GitHub** and ssh tunneling. We will build two docker images: The OS (_ubuntu_) and the MQTT client (_Mosquitto_). This step **wasn't** trivial, had to solve all the DNS problems for connection (that's the reason `--netork=host` is added to the `build` command. Also needed to add DNS serves on `/etc/docker/daemon.json')
+We are using a ssh tunnel for running everything from local host. The GPU is already set up from previous homeworks. The way to connect all files and systems is via **GitHub** and ssh tunneling. We will build two docker images: The OS (_ubuntu_) and the MQTT client (_Mosquitto_). This step **wasn't** trivial, had to solve all the DNS problems for connection (that's the reason `--netork=host` is added to the `build` command. Also needed to add DNS serves on `/etc/docker/daemon.json`)
 
 ```
 docker build --network=host -t mosquitto_jtx2 -f Dockerfile.mosquitto_jtx2 .
