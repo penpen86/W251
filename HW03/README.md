@@ -52,7 +52,7 @@ PasswordAuthentication no
 
 ## 2.- Create a Cloud Object Storage (S3 API). 
 Via IBM cloud's webpage we can create a Cloud Storage Object. First we will have the credentials for the Object. Then we can create any bucket inside the server
-* Bucket name: face-images. This bucket is set to public, so we can access it.
+* Bucket name: _face-app_. This bucket is set to public, so we can access it.
 
 ## 3.- Install Docker CE using the instructions on Lab2
 I've created a .sh script to do all the updating and installing (check **DockerCE.sh** as the files attached to the repo)
