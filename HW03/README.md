@@ -77,7 +77,7 @@ sudo make install
 ## 5.- Add the Cloud Storage Object credentials to the _face-server_
 From _Step 2_, we can have the Access Key ID and the Secret Access Key from our Cloud Storage Object. The name of the bucket is _face-app_. It has to be set to public via the _Access Policies_ so we can access it from a browser
 ```
-echo "9bd12b89d5674df4a7bac4a5d6e31554:719fc2a24eb776e244f07a91cfcc82035c7623af99f641cd" > $HOME/.cos_creds
+echo "<AccessKeyID>:<SecretAccessKey>" > $HOME/.cos_creds
 chmod 600 $HOME/.cos_creds
 ```
 
