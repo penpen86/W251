@@ -103,7 +103,7 @@ One example of the images pass on this architecture is on the following link:
 
 * http://s3.us.cloud-object-storage.appdomain.cloud/face-app/face-015.png
 
-![alt text](https://raw.githubusercontent.com/penpen86/W251/HW03/face-015.png)
+![alt text](https://raw.githubusercontent.com/penpen86/W251/master/HW03/face-015.png)
 
 ___
 # Final Considerations
