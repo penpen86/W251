@@ -5,7 +5,7 @@ Calling method: python3 app_faces_video.py <broker_address>
 
 Definition of broker address:
 broker_addr = "iot.eclipse.org"
-broker_addr = ""
+broker_addr = "52.116.3.158"
 broker_addr = "localhost"
 broker_addr = "127.0.0.1"
 broker_addr = "mosquitto"
@@ -49,7 +49,7 @@ face_cascade = cv.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 # Start stream, using loop
 client.loop_start()
-
+#aux = 0
 # Run code while camera is on
 while(True):
     # Capture frame-by-frame from feed
@@ -64,11 +64,13 @@ while(True):
     for (x,y,w,h) in faces:
         crop_faces = gray[y:y+h,x:x+w]
         cv.imshow("crop", crop_faces)
-        client.publish("face_app", bytearray(cv.imencode('.png', crop_faces)[1]), qos=1)
+        client.publish("face_app/test", bytearray(cv.imencode('.png', crop_faces)[1]), qos=1)
 
     # Close the connection
-    if cv.waitKey(500) & 0xFF == ord('q'):
+    if cv.waitKey(1) & 0xFF == ord('q'):
         break
+    
+    #aux = aux + 1
 
 # Time to wait next command, avoid blockage
 time.sleep(1) 
@@ -77,4 +79,4 @@ time.sleep(1)
 client.loop_stop()
 client.disconnect()
 cap.release()
-cv.destroAllWindows()
+cv.destroyAllWindows()
