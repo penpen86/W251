@@ -32,7 +32,7 @@ else:
 # Create methods for connections and subscription of messages
 def on_connect(client, userdata, flags, rc):
     print("Connected to broker with result code "+str(rc))
-    client.subscribe("face_app")
+    client.subscribe("face_app/test")
 
 # Start counter
 img_number = 0
@@ -48,8 +48,12 @@ def on_message(client, userdata, msg):
     print(img.shape)
     
     # Save messages, keeping numeration of stream
-    img_name = output_dir + "face-" + str(img_number) + ".png"
-    print(img_name)
+    if(img_number <10):
+        img_name = output_dir + "/face-0" + str(img_number) + ".png"
+        print(img_name)
+    else:
+        img_name = output_dir + "/face-" + str(img_number) + ".png"
+        print(img_name)
     img_number = img_number + 1
     
     # Write image in Object Storage
