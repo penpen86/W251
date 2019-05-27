@@ -1,4 +1,4 @@
-# End-to-end connection from Jetson TX2' webcamera to Cloud Object Storage
+# End-to-end connection from Jetson TX2's webcamera to Cloud Object Storage
 
 From the Homework statement, we can steal the image that explains better our main goal in this project
 
