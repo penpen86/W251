@@ -24,7 +24,7 @@ docker network create --driver bridge faces
 docker run --name mosquitto --network faces -p :1883 -v "$PWD":/HW03 -d mosquitto_jtx2 sh -c "mosquitto -c /HW03/mqtt_broker_jtx2.conf"
 docker run --name forwarder --network faces -v "$PWD":/HW03 -d mosquitto_jtx2 sh -c "mosquitto -c /HW03/mqtt_forwarder_jtx2.conf"
 ```
-These commandas create the necessary containers that connect to the client as a broker and then forwarded towards the subscriber in the cloud.
+These commands create the necessary containers that connect to the client as a broker and then forwarded towards the subscriber in the cloud.
 
 ## 3.- Run the image capture application
 For running the application, we need to create a docker container call _face_app_. I create a .sh file for this process called **DockerFace.sh**. This will open the bash and we can run the capture API
