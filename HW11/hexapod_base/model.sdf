@@ -1,0 +1,966 @@
+<sdf version='1.5'>
+  <model name='hexapod'>
+  	
+    <link name='base_link'>
+      <pose>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>1.031</mass>
+        <inertia>
+          <ixx>0.00357413</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00508627</iyy>
+          <iyz>0</iyz>
+          <izz>0.00838547</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.24 0.2 0.04</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.24 0.2 0.04</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+    <link name='leg_0_1'>
+      <pose>0.12 -0.08 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.01 -0.03 0 1.5708 -0 0</pose>
+        <mass>0.02</mass>
+        <inertia>
+          <ixx>8e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8e-06</iyy>
+          <iyz>0</iyz>
+          <izz>6.66667e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_0_1_collision'>
+        <pose>0.01 -0.03 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.06</length>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='leg_0_1_visual'>
+        <pose>0.01 -0.03 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.06</length>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='body_leg_0' type='revolute'>
+      <child>leg_0_1</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>0.785398</upper>
+          <effort>20</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='leg_0_2'>
+      <pose>0.12 -0.14 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.01 -0.0425 0 1.5708 -0 0</pose>
+        <mass>0.184</mass>
+        <inertia>
+          <ixx>0.000129183</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000129183</iyy>
+          <iyz>0</iyz>
+          <izz>6.13333e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_0_2_collision'>
+        <pose>0.01 -0.0425 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.085</length>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='leg_0_2_visual'>
+        <pose>0.01 -0.0425 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.085</length>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='leg_0_1_2' type='revolute'>
+      <child>leg_0_2</child>
+      <parent>leg_0_1</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>0.785398</upper>
+          <effort>20</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    
+    <link name='leg_0_3'>
+      <pose>0.12 -0.225 0 1.5708 -0 0</pose>
+      <inertial>
+        <pose>0.0125 -0.0475 0 1.5708 -0 0</pose>
+        <mass>0.184</mass>
+        <inertia>
+          <ixx>0.000129183</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000129183</iyy>
+          <iyz>0</iyz>
+          <izz>6.13333e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_0_3_collision'>
+        <pose>0.0125 -0.0475 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.095</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='leg_0_3_visual'>
+        <pose>0.0125 -0.0475 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.095</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    
+    <joint name='leg_0_2_3' type='revolute'>
+      <child>leg_0_3</child>
+      <parent>leg_0_2</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>0.785398</upper>
+          <effort>20</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    
+    
+    
+    <link name='leg_1_1'>
+      <pose>-0.01 -0.08 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.01 -0.03 0 1.5708 -0 0</pose>
+        <mass>0.02</mass>
+        <inertia>
+          <ixx>8e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8e-06</iyy>
+          <iyz>0</iyz>
+          <izz>6.66667e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_1_1_collision'>
+        <pose>0.01 -0.03 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.06</length>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='leg_1_1_visual'>
+        <pose>0.01 -0.03 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.06</length>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='body_leg_1' type='revolute'>
+      <child>leg_1_1</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>0.785398</upper>
+          <effort>20</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='leg_1_2'>
+      <pose>-0.01 -0.14 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.01 -0.0425 0 1.5708 -0 0</pose>
+        <mass>0.184</mass>
+        <inertia>
+          <ixx>0.000129183</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000129183</iyy>
+          <iyz>0</iyz>
+          <izz>6.13333e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_1_2_collision'>
+        <pose>0.01 -0.0425 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.085</length>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='leg_1_2_visual'>
+        <pose>0.01 -0.0425 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.085</length>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='leg_1_1_2' type='revolute'>
+      <child>leg_1_2</child>
+      <parent>leg_1_1</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>0.785398</upper>
+          <effort>20</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='leg_1_3'>
+      <pose>-0.01 -0.225 0 1.5708 -0 0</pose>
+      <inertial>
+        <pose>0.0125 -0.0475 0 1.5708 -0 0</pose>
+        <mass>0.184</mass>
+        <inertia>
+          <ixx>0.000129183</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000129183</iyy>
+          <iyz>0</iyz>
+          <izz>6.13333e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_1_3_collision'>
+        <pose>0.0125 -0.0475 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.095</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='leg_1_3_visual'>
+        <pose>0.0125 -0.0475 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.095</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='leg_1_2_3' type='revolute'>
+      <child>leg_1_3</child>
+      <parent>leg_1_2</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>0.785398</upper>
+          <effort>20</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    
+    
+    <link name='leg_2_1'>
+      <pose>-0.14 -0.08 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.01 -0.03 0 1.5708 -0 0</pose>
+        <mass>0.02</mass>
+        <inertia>
+          <ixx>8e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8e-06</iyy>
+          <iyz>0</iyz>
+          <izz>6.66667e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_2_1_collision'>
+        <pose>0.01 -0.03 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.06</length>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='leg_2_1_visual'>
+        <pose>0.01 -0.03 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.06</length>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='body_leg_2' type='revolute'>
+      <child>leg_2_1</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>0.785398</upper>
+          <effort>20</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='leg_2_2'>
+      <pose>-0.14 -0.14 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.01 -0.0425 0 1.5708 -0 0</pose>
+        <mass>0.184</mass>
+        <inertia>
+          <ixx>0.000129183</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000129183</iyy>
+          <iyz>0</iyz>
+          <izz>6.13333e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_2_2_collision'>
+        <pose>0.01 -0.0425 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.085</length>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='leg_2_2_visual'>
+        <pose>0.01 -0.0425 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.085</length>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='leg_2_1_2' type='revolute'>
+      <child>leg_2_2</child>
+      <parent>leg_2_1</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>0.785398</upper>
+          <effort>20</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='leg_2_3'>
+      <pose>-0.14 -0.225 0 1.5708 -0 0</pose>
+      <inertial>
+        <pose>0.0125 -0.0475 0 1.5708 -0 0</pose>
+        <mass>0.184</mass>
+        <inertia>
+          <ixx>0.000129183</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000129183</iyy>
+          <iyz>0</iyz>
+          <izz>6.13333e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_2_3_collision'>
+        <pose>0.0125 -0.0475 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.095</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='leg_2_3_visual'>
+        <pose>0.0125 -0.0475 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.095</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='leg_2_2_3' type='revolute'>
+      <child>leg_2_3</child>
+      <parent>leg_2_2</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>0.785398</upper>
+          <effort>20</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    
+    
+    <link name='leg_3_1'>
+      <pose>-0.14 0.08 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.01 0.03 0 1.5708 -0 0</pose>
+        <mass>0.02</mass>
+        <inertia>
+          <ixx>8e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8e-06</iyy>
+          <iyz>0</iyz>
+          <izz>6.66667e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_3_1_collision'>
+        <pose>0.01 0.03 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.06</length>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='leg_3_1_visual'>
+        <pose>0.01 0.03 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.06</length>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='body_leg_3' type='revolute'>
+      <child>leg_3_1</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>0.785398</upper>
+          <effort>20</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='leg_3_2'>
+      <pose>-0.14 0.14 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.01 0.0425 0 1.5708 -0 0</pose>
+        <mass>0.184</mass>
+        <inertia>
+          <ixx>0.000129183</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000129183</iyy>
+          <iyz>0</iyz>
+          <izz>6.13333e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_3_2_collision'>
+        <pose>0.01 0.0425 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.085</length>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='leg_3_2_visual'>
+        <pose>0.01 0.0425 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.085</length>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='leg_3_1_2' type='revolute'>
+      <child>leg_3_2</child>
+      <parent>leg_3_1</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>0.785398</upper>
+          <effort>20</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='leg_3_3'>
+      <pose>-0.14 0.225 0 -1.5708 0 0</pose>
+      <inertial>
+        <pose>0.0125 0.0475 0 1.5708 -0 0</pose>
+        <mass>0.184</mass>
+        <inertia>
+          <ixx>0.000129183</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000129183</iyy>
+          <iyz>0</iyz>
+          <izz>6.13333e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_3_3_collision'>
+        <pose>0.0125 0.0475 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.095</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='leg_3_3_visual'>
+        <pose>0.0125 0.0475 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.095</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='leg_3_2_3' type='revolute'>
+      <child>leg_3_3</child>
+      <parent>leg_3_2</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>0.785398</upper>
+          <effort>20</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='leg_4_1'>
+      <pose>-0.01 0.08 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.01 0.03 0 1.5708 -0 0</pose>
+        <mass>0.02</mass>
+        <inertia>
+          <ixx>8e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8e-06</iyy>
+          <iyz>0</iyz>
+          <izz>6.66667e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_4_1_collision'>
+        <pose>0.01 0.03 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.06</length>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='leg_4_1_visual'>
+        <pose>0.01 0.03 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.06</length>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='body_leg_4' type='revolute'>
+      <child>leg_4_1</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>0.785398</upper>
+          <effort>20</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='leg_4_2'>
+      <pose>-0.01 0.14 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.01 0.0425 0 1.5708 -0 0</pose>
+        <mass>0.184</mass>
+        <inertia>
+          <ixx>0.000129183</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000129183</iyy>
+          <iyz>0</iyz>
+          <izz>6.13333e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_4_2_collision'>
+        <pose>0.01 0.0425 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.085</length>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='leg_4_2_visual'>
+        <pose>0.01 0.0425 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.085</length>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='leg_4_1_2' type='revolute'>
+      <child>leg_4_2</child>
+      <parent>leg_4_1</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>0.785398</upper>
+          <effort>20</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='leg_4_3'>
+      <pose>-0.01 0.225 0 -1.5708 0 0</pose>
+      <inertial>
+        <pose>0.0125 0.0475 0 1.5708 -0 0</pose>
+        <mass>0.184</mass>
+        <inertia>
+          <ixx>0.000129183</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000129183</iyy>
+          <iyz>0</iyz>
+          <izz>6.13333e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_4_3_collision'>
+        <pose>0.0125 0.0475 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.095</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='leg_4_3_visual'>
+        <pose>0.0125 0.0475 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.095</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='leg_4_2_3' type='revolute'>
+      <child>leg_4_3</child>
+      <parent>leg_4_2</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>0.785398</upper>
+          <effort>20</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='leg_5_1'>
+      <pose>0.12 0.08 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.01 0.03 0 1.5708 -0 0</pose>
+        <mass>0.02</mass>
+        <inertia>
+          <ixx>8e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8e-06</iyy>
+          <iyz>0</iyz>
+          <izz>6.66667e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_5_1_collision'>
+        <pose>0.01 0.03 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.06</length>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='leg_5_1_visual'>
+        <pose>0.01 0.03 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.06</length>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='body_leg_5' type='revolute'>
+      <child>leg_5_1</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>0.785398</upper>
+          <effort>20</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='leg_5_2'>
+      <pose>0.12 0.14 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.01 0.0425 0 1.5708 -0 0</pose>
+        <mass>0.184</mass>
+        <inertia>
+          <ixx>0.000129183</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000129183</iyy>
+          <iyz>0</iyz>
+          <izz>6.13333e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_5_2_collision'>
+        <pose>0.01 0.0425 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.085</length>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='leg_5_2_visual'>
+        <pose>0.01 0.0425 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.085</length>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='leg_5_1_2' type='revolute'>
+      <child>leg_5_2</child>
+      <parent>leg_5_1</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>0.785398</upper>
+          <effort>20</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='leg_5_3'>
+      <pose>0.12 0.225 0 -1.5708 0 0</pose>
+      <inertial>
+        <pose>0.0125 0.0475 0 1.5708 -0 0</pose>
+        <mass>0.184</mass>
+        <inertia>
+          <ixx>0.000129183</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000129183</iyy>
+          <iyz>0</iyz>
+          <izz>6.13333e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='leg_5_3_collision'>
+        <pose>0.0125 0.0475 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.095</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='leg_5_3_visual'>
+        <pose>0.0125 0.0475 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.095</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='leg_5_2_3' type='revolute'>
+      <child>leg_5_3</child>
+      <parent>leg_5_2</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>0.785398</upper>
+          <effort>20</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    
+    <plugin name="pexod_control" filename="libpexod_plugin.so"/>
+    
+  </model>
+</sdf>

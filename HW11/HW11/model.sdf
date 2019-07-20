@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="HW11">
+
+    <include>
+      <uri>model://simple_gripper</uri>
+      <pose>0.2 0 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://hexapod_base</uri>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+
+    <joint name="gripper_joint" type="fixed">
+      <parent>haexapod_base::base_link</parent>
+      <child>simple_gripper::riser</child>
+    </joint>
+
+  </model>
+</sdf>
