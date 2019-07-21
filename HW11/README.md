@@ -1,2 +1,2 @@
-## Homework 11 - Uisng GAZEBO to generate a sig legged robot with a claw
+## Homework 11 - Using GAZEBO to generate a sig legged robot with a claw
 
